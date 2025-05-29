@@ -1,0 +1,16 @@
+{
+    "name": "maksim/lrv-h-basics",
+    "description": "Создать приложение для ведения учебных групп.",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Maksim\\LrvHBasics\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Maksim Chalykh"
+        }
+    ],
+    "require": {}
+}
