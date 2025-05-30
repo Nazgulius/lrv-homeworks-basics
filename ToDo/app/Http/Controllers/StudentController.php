@@ -31,12 +31,16 @@ class StudentController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email',
+            'surname' => 'required|string|max:255',
         ]);
-        $student = new Student($request->all());
+        // $student = new Student($request->all());
+        $student = new Student();
+        $student->name = $request->name;
+        $student->surname = $request->surname;
         $student->group_id = $group->id;
         $student->save();
-        return redirect()->route('groups.show', $group);
+        // return redirect()->route('groups.show', $group);
+        return redirect()->route('students.show', $student);
     }
 
     /**
