@@ -34,6 +34,10 @@ class GroupController extends Controller
             'name' => 'required|string|max:255',
         ]);
         Group::create($request->all());
+        $group = new Group();
+        $group->title = $request->name;
+        $group->save();
+
         return redirect()->route('groups.index');
     }
 

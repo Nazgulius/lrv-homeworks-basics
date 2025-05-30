@@ -48,7 +48,8 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return view('students.show', compact('student'));
+        $group = $student->group;
+        return view('students.show', compact('student', 'group'));
     }
 
     /**

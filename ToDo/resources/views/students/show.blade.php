@@ -1,10 +1,4 @@
-<h1>Студент из группы: {{ $group->name }}</h1>
-<a href="{{ route('groups.index') }}">Вернуться к списку групп</a>
-<h2>Студенты:</h2>
-<ul>
-@foreach($students as $student)
-  <li>
-    <a href="{{ route('students.show', $student) }}">{{ $student->name }}</a>
-  </li>
-@endforeach
-</ul>
+<h1>Студент из группы {{ $group->title }} с номером: {{ $student->group_id }}</h1>
+<h2>Фамилия {{ $student->surname }}</h2>
+<h2>Имя {{ $student->name }}</h2>
+<a href="{{ route('groups.show', $group) }}">Назад к группе</a>
