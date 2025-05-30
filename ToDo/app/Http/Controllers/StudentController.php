@@ -21,7 +21,7 @@ class StudentController extends Controller
      */
     public function create(Group $group)
     {
-        return view('students.cteate', compact('group'));
+        return view('students.create', compact('group'));
     }
 
     /**
