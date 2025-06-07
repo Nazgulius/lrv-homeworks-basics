@@ -13,15 +13,10 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->integer('group_id')->default(1); // ID группы
-            $table->string('surname')->default('Петров'); // Фамилия студента
-            $table->string('name')->default('Иван'); // Имя студента
+            $table->string('surname'); // Фамилия студента
+            $table->string('name'); // Имя студента
+            $table->foreign('group_id')->constrained();
             $table->timestamps();
-        });
-
-        Schema::table('students', function (Blueprint $table) {
-            $table->unsignedBigInteger('group_id');
-            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
         });
     }
 
