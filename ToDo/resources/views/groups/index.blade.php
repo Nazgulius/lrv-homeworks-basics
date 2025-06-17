@@ -3,7 +3,7 @@
 <ul>
 @foreach($groups as $group)
   <li>
-    <a href="{{ route('groups.show', $group) }}">{{ $group->title }} - {{ $group->start_from }} - {{ $group->is_active }}</a>
+    <a href="{{ route('groups.show', $group) }}">{{ $group->title }}</a>
   </li>
 @endforeach
 </ul>
