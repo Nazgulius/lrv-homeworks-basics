@@ -30,13 +30,15 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
         ]);
-        Group::create($request->all());
-        $group = new Group();
-        $group->title = $request->name;
-        $group->save();
+
+        Group::create([
+            'title' => $validated['title'],
+            'start_from' => now()->toDateString(),
+            'is_active' => true,
+        ]);
 
         return redirect()->route('groups.index');
     }
